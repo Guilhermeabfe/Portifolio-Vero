@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vero — Portfólio</title>
+  <meta name="description" content="Portfólio de Vero — design de produto e identidade visual." />
+  <meta name="theme-color" content="#F4EFE8" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/hero-bg.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!--
+THESIS: A hero é a própria paisagem — colinas de grama laranja com uma estrada em S rumo ao sol. Nada compete com ela.
+OWN-WORLD: Imagem-base (assets/hero-bg.jpg) em tela cheia; céu #F4F1EC → #FBD7A8; grama #F7902E → #E8541A; estrada #F3D2B4; brilhos brancos.
+STORY: Quem entra sente o lugar antes de ler qualquer coisa: luz, calor, movimento lento, brilhos na grama.
+FIRST VIEWPORT: Imagem cobrindo 100svh; estrada central; câmera respira (zoom lento), paralaxe sutil com o cursor, sol pulsa no horizonte, partículas cintilam na grama. Sem componentes por enquanto.
+FORM: Direção fixada pela imagem enviada pelo usuário.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="header">
+    <a class="brand" href="#hero" aria-label="Vero — início">
+      <img class="brand-logo" src="assets/logo-vero.png" alt="Vero" width="900" height="288" />
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm btn-arrow" href="#contato">
+        Quero vender mais
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero" aria-label="Apresentação">
+    <div class="hero-scene" id="scene">
+      <div class="hero-zoom">
+        <!-- extensões laterais espelhadas (aparecem só quando a câmera está afastada) -->
+        <img class="hero-img hero-img--mirror hero-img--left" src="assets/hero-bg.jpg" alt="" aria-hidden="true" decoding="async" />
+        <img class="hero-img hero-img--mirror hero-img--right" src="assets/hero-bg.jpg" alt="" aria-hidden="true" decoding="async" />
+        <img
+          class="hero-img hero-img--main"
+          id="hero-img"
+          src="assets/hero-bg.jpg"
+          alt=""
+          width="1490"
+          height="1055"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-sun" aria-hidden="true"></div>
+        <canvas class="hero-sparkles" id="sparkles" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <div class="hero-veil" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Construímos o caminho do clique até a compra.</h1>
+      <p class="hero-sub">Gestão de tráfego, automação de CRM e lojas virtuais para marcas de moda e e-commerce.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#cases">Nossos cases</a>
+        <a class="btn btn-secondary" href="#contato">
+          Falar com a gente
+          <span class="btn-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== SERVIÇOS ============================== -->
+  <section class="services" id="servicos" aria-labelledby="services-title">
+    <h2 id="services-title" class="visually-hidden">Nossos serviços</h2>
+
+    <div class="stack" id="stack">
+
+      <article class="card card--1" style="--i: 0">
+        <h3 class="card-title">
+          <span class="card-title__a">Gestão de</span>
+          <span class="card-title__b">tráfego</span>
+        </h3>
+        <div class="card-foot">
+          <ul class="tags" aria-label="Frentes">
+            <li>Meta Ads</li>
+            <li>Google Ads</li>
+            <li>TikTok Ads</li>
+            <li>Criativos</li>
+            <li>Funil de conversão</li>
+          </ul>
+          <p class="card-text">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+            <span>Planejamos, rodamos e otimizamos campanhas que levam a pessoa certa até a sua loja — com criativos que param o scroll e um funil pensado para vender, não só para gerar cliques.</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="card card--2" style="--i: 1">
+        <h3 class="card-title">
+          <span class="card-title__a">Automação</span>
+          <span class="card-title__b">de CRM</span>
+        </h3>
+        <div class="card-foot">
+          <ul class="tags" aria-label="Frentes">
+            <li>Fluxos automáticos</li>
+            <li>Recuperação de carrinho</li>
+            <li>E-mail &amp; WhatsApp</li>
+            <li>Segmentação</li>
+            <li>Pós-venda</li>
+          </ul>
+          <p class="card-text">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+            <span>Transformamos cada contato em relacionamento: fluxos que recuperam carrinhos, reativam clientes e fazem a segunda compra acontecer — no canal certo, na hora certa, sem esforço manual.</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="card card--3" style="--i: 2">
+        <h3 class="card-title">
+          <span class="card-title__a">Lojas</span>
+          <span class="card-title__b">virtuais</span>
+        </h3>
+        <div class="card-foot">
+          <ul class="tags" aria-label="Frentes">
+            <li>Shopify</li>
+            <li>Nuvemshop</li>
+            <li>VTEX</li>
+            <li>UX de conversão</li>
+            <li>Integrações</li>
+          </ul>
+          <p class="card-text">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+            <span>Construímos lojas rápidas, bonitas e feitas para converter: vitrine que valoriza o produto, checkout sem atrito e integrações com o tráfego e o CRM para a jornada fechar do clique até a compra.</span>
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================== RESULTADOS ============================== -->
+  <section class="results" id="resultados" aria-labelledby="results-title">
+    <div class="stage">
+
+      <!-- arcos -->
+      <svg class="arcs" viewBox="0 0 1200 760" preserveAspectRatio="xMidYMin meet" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#E9E0D4" stroke-width="1.5">
+          <circle cx="600" cy="760" r="300" />
+          <circle cx="600" cy="760" r="430" />
+          <circle cx="600" cy="760" r="560" />
+        </g>
+        <g class="runners">
+          <circle class="runner runner--cw"  cx="600" cy="760" r="560" />
+          <circle class="runner runner--ccw" cx="600" cy="760" r="430" />
+          <circle class="runner runner--cw"  cx="600" cy="760" r="300" />
+        </g>
+      </svg>
+
+      <!-- chips flutuantes (posições em % da largura do palco) -->
+      <ul class="chips" aria-hidden="true">
+        <li class="chip chip--pill" data-ring="outer" data-angle="-18"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg><span>+12 novos pedidos</span></li>
+        <li class="chip chip--tile" data-ring="mid" data-angle="-24"><svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg><small>ROAS 4,8x</small></li>
+        <li class="chip chip--pill chip--new" data-ring="mid" data-angle="24"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20a2 2 0 0 0 4 0"/></svg><span>Novo lead</span></li>
+        <li class="chip chip--pill chip--metric" data-ring="mid" data-angle="62"><span>Conversão</span><svg class="arrow arrow--up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></li>
+        <li class="chip chip--pill chip--metric" data-ring="outer" data-angle="18"><span>CPC</span><svg class="arrow arrow--down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></svg></li>
+        <li class="chip chip--pill" data-ring="outer" data-angle="52"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 8h7a2.5 2.5 0 0 1 0 5H10a2.5 2.5 0 0 0 0 5h7"/></svg><span>+38 vendas hoje</span></li>
+        <li class="chip chip--pill chip--metric" data-ring="mid" data-angle="-62"><span>Resultados</span><svg class="arrow arrow--up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></li>
+        <li class="chip chip--pill chip--ok" data-ring="outer" data-angle="-52"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.3 2.3 4.7-4.8"/></svg><span>Campanha aprovada</span></li>
+        <li class="chip chip--pill chip--metric chip--edge" data-ring="outer" data-angle="-80"><span>Ticket médio</span><svg class="arrow arrow--up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></li>
+        <li class="chip chip--pill chip--ok chip--edge" data-ring="outer" data-angle="80"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.2l2.3 2.3 4.7-4.8"/></svg><span>Pedido pago</span></li>
+      </ul>
+
+      <div class="results-body">
+        <ul class="facts" aria-label="Visão geral">
+          <li><strong>+22</strong> clientes ativos</li>
+          <li><strong>R$ 4,5 mi</strong> investidos em mídia</li>
+        </ul>
+
+        <dl class="stats">
+          <div><dt>Faturamento atribuído</dt><dd>R$ 12M+</dd></div>
+          <div><dt>ROAS médio</dt><dd>4,8x</dd></div>
+          <div><dt>Pedidos gerados</dt><dd>180 mil+</dd></div>
+        </dl>
+
+        <h2 id="results-title" class="results-title">Tráfego que vira faturamento para marcas de moda e e-commerce.</h2>
+
+        <ul class="pills" aria-label="Como trabalhamos">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M6 4h12l2 5H4zM5 9v11h14V9M9 20v-5h6v5"/></svg>
+            Marcas de moda
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+            E-commerce
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-8M22 19H2"/></svg>
+            Relatórios semanais
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg>
+            Time dedicado
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================== TRABALHOS ============================== -->
+  <section class="works" id="trabalhos" aria-labelledby="works-title">
+    <div class="works-head">
+      <p class="works-kicker">Nossos trabalhos</p>
+      <h2 id="works-title" class="works-title">Sites que construímos para vender.</h2>
+      <p class="works-sub">Lojas virtuais e páginas que criamos para marcas de moda e e-commerce — do design ao checkout.</p>
+      <a class="btn btn-primary btn-arrow" href="#contato">
+        Ver todos os projetos
+        <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+      </a>
+    </div>
+
+    <div class="marquee" aria-label="Sites que criamos">
+      <ul class="marquee-track">
+        <li class="work" style="--bg:#2A1A10; --acc:#F26A1B; --panel:#F7F2EB">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Loja de moda feminina</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#F4EFE8; --acc:#2A1A10; --panel:#FFFFFF">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Marca de sneakers</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#FFE1CB; --acc:#C9420F; --panel:#FFF7F0">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>E-commerce de beleza</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#1F1F1F; --acc:#F98A34; --panel:#2B2B2B">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Moda masculina</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#FFF7F0; --acc:#F26A1B; --panel:#FFFFFF">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Acessórios & bolsas</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#7A3512; --acc:#FFD1B3; --panel:#8C4222">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Loja de óculos</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#2A1A10; --acc:#F26A1B; --panel:#F7F2EB">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Loja de moda feminina</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#F4EFE8; --acc:#2A1A10; --panel:#FFFFFF">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Marca de sneakers</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#FFE1CB; --acc:#C9420F; --panel:#FFF7F0">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>E-commerce de beleza</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#1F1F1F; --acc:#F98A34; --panel:#2B2B2B">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Moda masculina</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#FFF7F0; --acc:#F26A1B; --panel:#FFFFFF">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Acessórios & bolsas</figcaption>
+          </figure>
+        </li>
+        <li class="work" style="--bg:#7A3512; --acc:#FFD1B3; --panel:#8C4222">
+          <figure class="shot">
+            <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <div class="shot-ui" aria-hidden="true">
+              <div class="ui-nav"><b></b><em></em><em></em><em></em><u></u></div>
+              <div class="ui-hero"><div class="ui-copy"><b></b><b></b><b class="s"></b><u></u></div><div class="ui-art"></div></div>
+              <div class="ui-grid"><div></div><div></div><div></div></div>
+            </div>
+            <figcaption>Loja de óculos</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer" id="contato">
+    <div class="footer-inner">
+
+      <div class="footer-cta">
+        <p class="footer-kicker">Vagas limitadas por mês</p>
+        <h2 class="footer-title">Sua marca pode vender <em>muito</em> mais a partir de hoje.</h2>
+        <p class="footer-lead">Diagnóstico gratuito do seu tráfego, CRM e loja — com um plano claro do que mudar primeiro.</p>
+        <div class="footer-actions">
+          <a class="btn btn-primary btn-arrow" href="mailto:contato@vero.com.br">
+            Quero meu diagnóstico gratuito
+            <span class="btn-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/5500000000000">Chamar no WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Serviços</h3>
+          <a href="#servicos">Gestão de tráfego</a>
+          <a href="#servicos">Automação de CRM</a>
+          <a href="#servicos">Lojas virtuais</a>
+        </div>
+        <div class="footer-col">
+          <h3>Agência</h3>
+          <a href="#resultados">Resultados</a>
+          <a href="#trabalhos">Trabalhos</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+          <h3>Contato</h3>
+          <a href="mailto:contato@vero.com.br">contato@vero.com.br</a>
+          <a href="https://wa.me/5500000000000">+55 (00) 00000-0000</a>
+          <span class="footer-note">São Paulo · Brasil</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a class="brand brand--footer" href="#hero" aria-label="Vero — início">
+          <img class="brand-logo" src="assets/logo-vero-light.png" alt="Vero" width="900" height="288" />
+        </a>
+        <p class="footer-copy">© 2026 vero. Todos os direitos reservados.</p>
+        <ul class="footer-social" aria-label="Redes sociais">
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17M8 7.6v.1M12 17v-3.6a2 2 0 0 1 4 0V17"/></svg></a></li>
+          <li><a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9.4 9.1c.3 1.7 2.4 4 4.1 4.4l.9-.9 1.6.7c-.2 1-.9 1.7-1.9 1.7-2.9-.2-6-3.3-6.2-6.2 0-1 .7-1.7 1.7-1.9l.7 1.6z"/></svg></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
